@@ -31,11 +31,10 @@ namespace RomansSimpleNetworking
         Dictionary<int, Type> registeredDataTypes =
             new Dictionary<int, Type>(); //Stores data parse types.
 
-        public static RSN_Client Connect(RSN_Client_CallbackConfig[] callbacks, string password, RSN_Error onError = null)
+        public static RSN_Client Connect(RSN_Client_CallbackConfig[] callbacks, string password, string ip, Int32 port, RSN_Error onError = null)
         {
             //Create client
-            Int32 port = 13000;
-            TcpClient client = new TcpClient("10.0.1.13", port);
+            TcpClient client = new TcpClient(ip, port);
             
             //Create class
             RSN_Client output = new RSN_Client();

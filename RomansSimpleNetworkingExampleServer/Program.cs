@@ -18,7 +18,7 @@ namespace RomansSimpleNetworkingExampleServer
             callbacks.Add(new RSN_Server_CallbackConfig(1,new RSN_ServerResponse(Test),typeof(RSN_Example_SimpleClass)));
 
             //Create the server with password "hello"
-            RSN_Server server = RSN_Server.CreateServer(callbacks.ToArray(),"hello");
+            RSN_Server server = RSN_Server.CreateServer(callbacks.ToArray(),"hello", 13000);
 
             //Await ENTER
             Console.ReadLine();

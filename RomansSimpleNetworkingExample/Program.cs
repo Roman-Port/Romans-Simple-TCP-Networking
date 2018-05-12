@@ -24,7 +24,7 @@ namespace RomansSimpleNetworkingExample
 
             //Create the client and log in with password "hello".
             //If there is an error, ErrorHandle will be called
-            client = RSN_Client.Connect(callbacks.ToArray(),"hello",new RSN_Error(ErrorHandle));
+            client = RSN_Client.Connect(callbacks.ToArray(),"hello","10.0.1.13", 13000, new RSN_Error(ErrorHandle));
             
             //Await enter press
             Console.ReadLine();

@@ -23,12 +23,11 @@ namespace RomansSimpleNetworking
         Dictionary<int, RSN_Server_CallbackConfig> registeredDataTypes =
             new Dictionary<int, RSN_Server_CallbackConfig>(); //Stores data parse types.
 
-        public static RSN_Server CreateServer(RSN_Server_CallbackConfig[] callbacks, string password)
+        public static RSN_Server CreateServer(RSN_Server_CallbackConfig[] callbacks, string password, Int32 port)
         {
             RSN_Server ser = new RSN_Server();
             ser.password = password;
             TcpListener server = null; //Create a place for the server
-            Int32 port = 13000; //Define the port.
             IPAddress localAddr = IPAddress.Any; //Setup the listening IP.
             server = new TcpListener(localAddr, port); //Create listener
             server.Start();
