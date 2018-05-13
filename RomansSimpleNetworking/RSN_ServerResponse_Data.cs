@@ -8,9 +8,9 @@ namespace RomansSimpleNetworking
 {
     public class RSN_ServerResponse_Data
     {
-        Type t;
-        RSN_Server_Client client;
-        RSN_Packet packet;
+        public Type t;
+        public RSN_Server_Client client;
+        public RSN_Packet packet;
 
         public RSN_ServerResponse_Data(RSN_Packet _packet, RSN_Server_Client _client, Type _type, int _id)
         {

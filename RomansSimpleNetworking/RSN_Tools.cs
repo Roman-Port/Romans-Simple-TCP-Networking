@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RomansSimpleNetworking
 {
-    class RSN_Tools
+    public class RSN_Tools
     {
         public static object DeserializeObject(string value, Type objType)
         {

@@ -71,7 +71,7 @@ namespace RomansSimpleNetworking
             return output;
         }
 
-        public void SendData<T>(RSN_ClientResponse callback,T data)
+        public int SendData<T>(RSN_ClientResponse callback,T data)
         {
             try
             {
@@ -98,9 +98,12 @@ namespace RomansSimpleNetworking
                 RSN_Packet packet = new RSN_Packet(token, RSN_PacketType.EncodedMessage, msgId, dataString, type);
                 //Submit
                 RawWrite(packet.EncodePacket());
+                //return id
+                return msgId;
             } catch (Exception ex)
             {
                 OnError(RSN_Exception_ErrorType.Exception, "", ex);
+                return -1;
             }
         }
 
